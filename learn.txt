@@ -1,8 +1,9 @@
-hey its a test file to learn
-to open the file with vi :-
-step 1 : type "i" so that the editor can be started
-step 2 : type wharever you want
-step 3 : press "esc" button
-step 4 : type ":wq" 
-step 5 : press "enter"
+hey its a test file to learn how to create a new file or open a exsiting files in a local repo with the help of the git bash command line 
+to makea new file or open the exsting file
+Step 1 : vi "file_Name.extension"
+step 2 : type "i" so that the editor can be started
+step 3 : type wharever you want
+step 4 : press "esc" button
+step 5 : type ":wq" 
+step 6 : press "enter"
 
