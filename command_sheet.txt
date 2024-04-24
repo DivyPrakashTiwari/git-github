@@ -1,0 +1,109 @@
+to make a new directory/folder - mkdir "name_Of_Directory"
+
+to get into some directory/folder - cd "name_Of_Directory"
+
+to echo the current present working directory/folder location - pwd
+
+to initialize the local repo - git init
+(so we firstly make the folder but it wont be manage/view by the git as , we need to make it a repo such that git software can understand that git need to look into it. new folder is for window/mac/os & repo is folder for git)
+
+to make a new file through git - vi "file_Name . Extention"
+(it will make a file for you in the working directory that will be untracted)
+
+to configure the name of the developer - git config --global user.name "name_Of_Developer"
+(we need to config name before working with repo so that git can keep reocrd who made the changes)
+to echo the name of the developer - git config --global user.name
+
+to configure the email of the developer - git config --global user.email "email_Of_Developer"
+(we need to config email before working with repo so that git can keep reocrd who made the changes)
+to echo the name of the developer - git config --global user.email
+
+to check the status of repo - git status
+(we need to check status of repo frequently to keep idea which all files are untraked, stagged, unstagged,modified ,ready to commit)
+note : master is the default branch which gets created auto when we make a repo
+
+note : the files that are new in the directory/folder but not in repo are termed as untracked as they are present in the folder/directory but not in the repo. This is termed as "Working Directory"
+
+to stage the file - git add "name_Of_File"
+(this will take the file which can be in working diectory or in modifed-form to the stage area of the git. stgae area is basically the place were we keep our file before comiting to the local repo.)
+
+to stage the ALL file - git add -A
+
+to stage multiple files - git add "file1_Name.js" "file2_Name.js 
+
+to Stages with a pattern - git add *.js
+
+to Stages the current directory and all its content - git add .
+
+note : all the modified files go to the working directory , so we need to add those to stage area .
+
+to commit the changes from stageing area to local repo - git commit -m “message_That_Tobe_Displayed” 
+( commit will put all the files in the stage into the local repo at once )
+to commit the changes from stageing area to local repo with long information - git commit 
+
+to see Full history - git log 
+(it provides the complete histroy of commits that are done to the local repo with the name of developer with its email)
+to see summuary - git log --oneline  
+to lists the commits from the oldest to the newest - git log --reverse
+to check the git log of any branch - git log 'branch_Name'
+
+to show the exact place were chnage occured - git show
+(when you want to see the exact lines were you are have done the changes you can use this command bit it shows the latest changes in the past commit)
+to show the exact chnage made by specific commit - git show "commit_Id"
+
+to see the list of files that are track by the git - git ls-files
+
+to connect the remote (github repo) repo to your local repo - git remote add "origin/any_Other_Name" "link_Of_The_RemoteRepo"
+(this will help you to connect any repo on the github with your local repo)
+to echo the connection - git remote -v
+
+Note : you should not even put a single extra spaces to the link, as it counts that as a character and eventually not supported
+      example : fatal: protocol 'https' is not supported
+
+to re-eneter the correct remote repo link for connecting to local repo - git remote set-url "origin" "link_Of_The_RemoteRepo"
+(this will allow to to stablish fresh connection with the remote repo incase there is an error while pushing or perfomring other opration.)
+
+to push local repo to remote repo - git push "origin/any_Other_Name" master
+(this will allow you to push all the files that are commited in the local repo to push in remote repo) 
+
+note : you may encounter the following error incase when you are pushing a local repo to a remote repo that had files from other local repo.
+OR when you are pushing a local repo to an remote repo which had those files that are not in your local repo. 
+
+error: failed to push some refs to 'https://github.com/_/_.git'
+hint: Updates were rejected because the remote contains work that you do not have locally. This is usually caused by another repository pushing to the same ref. 
+This error message indicates that the remote repository (GitHub repository in this case) has been updated since the last time you pulled changes from it. To resolve this, you need to incorporate the changes from the remote repository into your local repository before pushing your changes.
+
+To resolve this issue - git pull origin master
+(Before pushing your changes, pull any changes that have been made to the remote repository into your local repository.)
+OR
+To resolve this issue - git pull origin master --allow-unrelated-histories
+(Git detects that the histories of the branches you're trying to merge diverge and have no common ancestor. This typically happens when you're trying to merge branches that were created independently in different local repo and don't share any commit history.)
+
+to view the name and number of the branch - git branch
+(it proivdes all the branches that are available in the local repo with *on the active branch that you are in)
+to view the current branch and its status - git status
+
+to make a new branch - git branch "newbranch_Name"
+
+to switch from defualt master to another branch - git checkout 'newbranch_Name'
+
+note : when a branch is created it will have all the commit from master/source branch at the time of creation, it wont include the new changes that will be made to the master/source after the new branch is made.
+so to check the git log of any branch - git log 'newbranch_Name'
+
+to merge branch to master branch (need to be in master/source branch) - git merge 'newbranch_Name'
+
+to re-base the branch with master/source branch - git rebase "master/source_Branch_Name"
+( the rebase word explains the commad itself. this command is used to make the update in the base of the new branch.
+when we make a new brnach it has all the access to the commits that are made to the master/source branch before the creation of the new branch.
+but after the creation of the new branch any commits made to the master branch are not present in the new branch.
+so to have all the new commits from the master/source branch the new barnch has to rebase itself
+)
+note : after rebasing the latest commit of new branch is kept above the commits that are made in the master even if the master commit is just few milliseocnds new then the latest commit of new branch , that master commit is treated below the new branch commits.  
+
+note : the git merge is for the master to get all the new commits from the new branch
+       the git rebase is for the new branch to get all the new commits from the master
+
+to archive your branch from local repo - git archive "branch_Name" --format=zip -output=../"name_Of_File.zip"
+
+to save all the uncommited changes to a temprory location - git stash ; git stash apply
+
