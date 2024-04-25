@@ -1,1 +1,1 @@
-hey its the seond txt file 
+hey its the seond txt file this is editted by the remote repo first but then we used the force push method to make those changes gone ,by expilictly pushing the local repo commits 
