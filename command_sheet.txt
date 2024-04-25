@@ -96,8 +96,7 @@ to re-base the branch with master/source branch - git rebase "master/source_Bran
 ( the rebase word explains the commad itself. this command is used to make the update in the base of the new branch.
 when we make a new brnach it has all the access to the commits that are made to the master/source branch before the creation of the new branch.
 but after the creation of the new branch any commits made to the master branch are not present in the new branch.
-so to have all the new commits from the master/source branch the new barnch has to rebase itself
-)
+so to have all the new commits from the master/source branch the new barnch has to rebase itsel
 note : after rebasing the latest commit of new branch is kept above the commits that are made in the master even if the master commit is just few milliseocnds new then the latest commit of new branch , that master commit is treated below the new branch commits.  
 
 note : the git merge is for the master to get all the new commits from the new branch
