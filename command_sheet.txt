@@ -63,6 +63,9 @@ Note : you should not even put a single extra spaces to the link, as it counts t
 to re-eneter the correct remote repo link for connecting to local repo - git remote set-url "origin" "link_Of_The_RemoteRepo"
 (this will allow to to stablish fresh connection with the remote repo incase there is an error while pushing or perfomring other opration.)
 
+to remove the connection of remote repo from the local repo - git remote rm "origin/any_Other_Name"
+
+
 to push local repo to remote repo - git push "origin/any_Other_Name" master
 (this will allow you to push all the files that are commited in the local repo to push in remote repo) 
 
@@ -78,9 +81,15 @@ To resolve this issue - git pull origin master
 OR
 To resolve this issue - git pull origin master --allow-unrelated-histories
 (Git detects that the histories of the branches you're trying to merge diverge and have no common ancestor. This typically happens when you're trying to merge branches that were created independently in different local repo and don't share any commit history.)
+OR
+To push forcefully local repo commit to remote repo if there are commits made to remote repo that are not made to local repo - git push -f origin master
+
 
 to view the name and number of the branch - git branch
 (it proivdes all the branches that are available in the local repo with *on the active branch that you are in)
+
+to view list of all branches presrnt locally & remote - git git branch -a
+
 to view the current branch and its status - git status
 
 to make a new branch - git branch "newbranch_Name"
@@ -102,7 +111,38 @@ note : after rebasing the latest commit of new branch is kept above the commits 
 note : the git merge is for the master to get all the new commits from the new branch
        the git rebase is for the new branch to get all the new commits from the master
 
+to push a local repo branch to remote repo - git push "origin/any_Other_Name" 'newbranch_Name'
+(as the branch that we make are in local repo it wont show in the remote repo so we need to push the barches also incase we want them to flash there)
+
+to delete a branch from local repo - git branch -d "branch_Name"
+
+to to delete a branch from remote repo - git push -d origin "branch_Name"
+
 to archive your branch from local repo - git archive "branch_Name" --format=zip -output=../"name_Of_File.zip"
 
 to save all the uncommited changes to a temprory location - git stash ; git stash apply
+
+to rename a branch - 
+first rename in local repo with - git branch -m old_Name new_Name
+second push the branch after name change - git push origin :old_Name new_Name
+ 
+to fork/copy other remote repo -This can be done by GitHub , there is fork option add the right hand corner. with just a click you get the copy of that remote repo
+(when we fork something nothing happens to the orginal remote repo as you get a copy of the remote repo)
+
+to clone the remote repo to local repo - git clone "url" 
+(it will bring all the file from the remote repo to your local repo)
+
+to create a local repo from the forked repo - git remote add upstream "link_Of_Others_RemoteRepo"
+
+to check/compare all the changes made in each files present in a local repo(also in specific branch) - git diff
+
+to check/compare all the changes between to files present in local repo - diff "file_Name1.ext" "file_Name2.ext"
+
+to check/compare all the changes made via two differnt commits - git diff "commit_ID1" "commit_ID2"
+
+to get information of all new changes from the remote repository - git fetch "remote_Branch"
+
+to check/compare all the changes between remote and local repo - git diff master OR "other_Branch_Name" origin/master OR "other_Branch_Name"
+
+to copy one file to another file - cp "file_ToBe_Copied.ext" "file_InWhich_Copied.ext"
 
