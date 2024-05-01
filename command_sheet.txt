@@ -41,6 +41,8 @@ to commit the changes from stageing area to local repo - git commit -m “messag
 ( commit will put all the files in the stage into the local repo at once )
 to commit the changes from stageing area to local repo with long information - git commit 
 
+to revoke the commit - ?
+
 to see Full history - git log 
 (it provides the complete histroy of commits that are done to the local repo with the name of developer with its email)
 to see summuary - git log --oneline  
@@ -64,7 +66,6 @@ to re-eneter the correct remote repo link for connecting to local repo - git rem
 (this will allow to to stablish fresh connection with the remote repo incase there is an error while pushing or perfomring other opration.)
 
 to remove the connection of remote repo from the local repo - git remote rm "origin/any_Other_Name"
-
 
 to push local repo to remote repo - git push "origin/any_Other_Name" master
 (this will allow you to push all the files that are commited in the local repo to push in remote repo) 
@@ -139,6 +140,7 @@ to get information of all new changes from the remote repository - git fetch "re
 to check/compare all the changes between remote and local repo - git diff master OR "other_Branch_Name" origin/master OR "other_Branch_Name"
 
 note: To see the changes between your local repository and the remote repository, you would typically use git fetch to bring the remote changes into your local repository and then use git diff to compare your local branch with the updated remote branch.
+Plus when you make changes to local repo ,without commiting you cannot see the differnce
 
 to copy one file to another file - cp "file_ToBe_Copied.ext" "file_InWhich_Copied.ext"
 
@@ -151,5 +153,11 @@ to clone the remote repo to local repo - git clone "url"
 to make the nested repository (called as submodule) - git submodule add "url_Remote/Fork_Repo"
 (If you intended for the smaller box (the nested Git repository) to be included and accessible when others clone your main repository, you should set it up as a submodule. This means Git will keep track of it separately but still include it when someone clones your main repository.)
 
+note : if any chages made in the small repo will be visible to big repo but any changes in big repo wont be accessbile in small
+
+note : when you commit and push from small repo the changes are only made in the local and remote of small repo , those changes are not there in big repo.
+So first you have to stage and commit in small repo then only big repo can add those and commit.
+
 to remove nested git/submodule from your main repository without deleting it entirely - git rm --cached
 
+git remote add upstream https://github.com/EliteMandy/EliteMandy.git
