@@ -125,12 +125,6 @@ to save all the uncommited changes to a temprory location - git stash ; git stas
 to rename a branch - 
 first rename in local repo with - git branch -m old_Name new_Name
 second push the branch after name change - git push origin :old_Name new_Name
- 
-to fork/copy other remote repo -This can be done by GitHub , there is fork option add the right hand corner. with just a click you get the copy of that remote repo
-(when we fork something nothing happens to the orginal remote repo as you get a copy of the remote repo)
-
-to clone the remote repo to local repo - git clone "url" 
-(it will bring all the file from the remote repo to your local repo)
 
 to create a local repo from the forked repo - git remote add upstream "link_Of_Others_RemoteRepo"
 
@@ -144,5 +138,18 @@ to get information of all new changes from the remote repository - git fetch "re
 
 to check/compare all the changes between remote and local repo - git diff master OR "other_Branch_Name" origin/master OR "other_Branch_Name"
 
+note: To see the changes between your local repository and the remote repository, you would typically use git fetch to bring the remote changes into your local repository and then use git diff to compare your local branch with the updated remote branch.
+
 to copy one file to another file - cp "file_ToBe_Copied.ext" "file_InWhich_Copied.ext"
+
+to fork/copy other remote repo -This can be done by GitHub , there is fork option add the right hand corner. with just a click you get the copy of that remote repo
+(when we fork something nothing happens to the orginal remote repo as you get a copy of the remote repo)
+
+to clone the remote repo to local repo - git clone "url" 
+(it will bring all the file from the remote repo to your local repo)
+
+to make the nested repository (called as submodule) - git submodule add "url_Remote/Fork_Repo"
+(If you intended for the smaller box (the nested Git repository) to be included and accessible when others clone your main repository, you should set it up as a submodule. This means Git will keep track of it separately but still include it when someone clones your main repository.)
+
+to remove nested git/submodule from your main repository without deleting it entirely - git rm --cached
 
