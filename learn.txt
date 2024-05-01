@@ -1,4 +1,4 @@
-hey its a test file to learn how to create a new file or open a exsiting files in a local repo with the help of the git bash command line 
+hey Divri This side
 to makea new file or open the exsting file
 Step 1 : vi "file_Name.extension"
 step 2 : type "i" so that the editor can be started
