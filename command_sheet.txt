@@ -100,6 +100,14 @@ to switch from defualt master to another branch - git checkout 'newbranch_Name'
 note : when a branch is created it will have all the commit from master/source branch at the time of creation, it wont include the new changes that will be made to the master/source after the new branch is made.
 so to check the git log of any branch - git log 'newbranch_Name'
 
+to Create and switches to new branch  - git checkout —b "new_BranchName"
+
+to Create new branch from commit hash/Id - git checkout —b "new_BranchName" "Commit_ID"
+
+to create new branch from n commit prior to head/current commit - git checkout —b new branch n 
+(n is the number of commit prior you want to go)
+
+
 to merge branch to master branch (need to be in master/source branch) - git merge 'newbranch_Name'
 
 to re-base the branch with master/source branch - git rebase "master/source_Branch_Name"
