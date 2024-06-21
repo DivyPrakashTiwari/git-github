@@ -3,4 +3,4 @@ git @#$@!!!
 cheat sheet is also avaiable
 for your refernce
 follow that 
-and you will witness the changes
+and you will witness the growth in your knowledge 
