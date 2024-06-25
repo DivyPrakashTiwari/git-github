@@ -5,3 +5,4 @@ for your refernce
 follow that 
 and you will witness the growth in your knowledge 
 in the GitOps domain.
+You will also look into GitLabs
